@@ -40,6 +40,7 @@ export const login = async (req, res) => {
     }
 }
 
+
 export const logOut = async (req, res) => {
     try {
         const sessionId = req.cookies?.session

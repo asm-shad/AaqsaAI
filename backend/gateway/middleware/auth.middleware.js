@@ -10,6 +10,7 @@ const protect = async (req, res, next) => {
         if(!session){
             return res.status(401).json({message:"Unauthorized"})
         }
+        req.user = JSON.parse(session)
         next()
     } catch (e) {
         return res.status(500).json({message:`auth middleware error ${e}`})
